@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Multi-step form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="steps-container">
+        <div>
+          <div>
+            <a href="index.html">1</a>
+            <div>
+              <p>step 1</p>
+              <p class="bold">YOUR INFO</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="plan.html">2</a>
+            <div>
+              <p>step 2</p>
+              <p class="bold">SELECT PLANS</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="add-ons.html">3</a>
+            <div>
+              <p>step 3</p>
+              <p class="bold">ADD-ONS</p>
+            </div>
+          </div>
+
+          <div>
+            <a class="active" href="summary.html">4</a>
+            <div>
+              <p>step 4</p>
+              <p class="bold">SUMMARY</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="form-container">
+        <div>
+          <div id="summary-header">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming</p>
+          </div>
+
+          <div id="summary-container">
+            <div id="first-content">
+              <div id="current-plan">
+                <div>
+                  <h4>Arcade (Monthly)</h4>
+                  <a href="plan.html">change</a>
+                </div>
+
+                <p>+$<span>9</span>/mo</p>
+              </div>
+              <hr />
+
+              <div class="other-services">
+                <p>Online service</p>
+                <p class="other-services-charge">+$<span>1</span>/mo</p>
+              </div>
+
+              <div class="other-services">
+                <p>Larger storage</p>
+                <p class="other-services-charge">+$<span>2</span>/mo</p>
+              </div>
+            </div>
+
+            <div id="second-content">
+              <p>Total (Monthly)</p>
+              <p id="total-charge">+$<span>12</span>/mo</p>
+            </div>
+          </div>
+
+          <div id="navigation" class="navigation confirm-nav">
+            <a href="add-ons.html" class="back">Go Back</a>
+            <button id="confirm">Confirm</button>
+          </div>
+
+          <div id="thank-you-message-container">
+            <img
+              src="assets/images/icon-thank-you.svg"
+              alt=""
+              class="check-image" />
+            <span class="thank-you">Thank you!</span>
+            <p class="message">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. if you ever need support, please feel free to
+              email us at support@lorem.com
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const confirmBtn = document.querySelector("#confirm");
+      const pageHeaderContent = document.querySelector("#summary-header");
+      const navigation = document.querySelector(".confirm-nav");
+      const summary = document.querySelector("#summary-container");
+      const message = document.querySelector("#thank-you-message-container");
+
+      confirmBtn.addEventListener("click", function () {
+        summary.style.setProperty("display", "none", "important");
+        pageHeaderContent.style.setProperty("display", "none", "important");
+        navigation.style.setProperty("display", "none", "important");
+        message.style.setProperty("display", "flex", "important");
+      });
+    </script>
+  </body>
+</html>

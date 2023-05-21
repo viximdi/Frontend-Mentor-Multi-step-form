@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Multi-step form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section id="steps-container">
+        <div>
+          <div>
+            <a href="index.html">1</a>
+            <div>
+              <p>step 1</p>
+              <p class="bold">YOPUR INFO</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="plan.html">2</a>
+            <div>
+              <p>step 2</p>
+              <p class="bold">SELECT PLANS</p>
+            </div>
+          </div>
+
+          <div>
+            <a class="active" href="add-ons.html">3</a>
+            <div>
+              <p>step 3</p>
+              <p class="bold">ADD-ONS</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="summary.html">4</a>
+            <div>
+              <p>step 4</p>
+              <p class="bold">SUMMARY</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="form-container">
+        <div>
+          <div>
+            <h1>Pick add-ons</h1>
+            <p>add-ons help enhance your gaming experiences</p>
+          </div>
+
+          <form id="plans" class="services">
+            <label for="plan1" class="label">
+              <div>
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  name="plan"
+                  id="plan1"
+                  value="Online services" />
+
+                <div>
+                  <h3>Online Services</h3>
+                  <p>Acess to multiplayer games</p>
+                </div>
+              </div>
+
+              <span>+$1/mo</span>
+            </label>
+
+            <label for="plan2" class="label">
+              <div>
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  name="plan"
+                  id="plan2"
+                  value="Larger storage" />
+                <div>
+                  <h3>Larger storage</h3>
+                  <p>Extra 1TB of cloud save</p>
+                </div>
+              </div>
+
+              <span>+$2/mo</span>
+            </label>
+
+            <label for="plan3" class="label">
+              <div>
+                <input
+                  type="checkbox"
+                  class="checkbox"
+                  name="plan"
+                  id="plan3"
+                  value="Customizable profile" />
+                <div>
+                  <h3>Customizable profile</h3>
+                  <p>Custom theme on yor profile</p>
+                </div>
+              </div>
+
+              <span>+$2/mo</span>
+            </label>
+
+            <div id="navigation">
+              <a href="plan.html" class="back">Go Back</a>
+              <button>Next Step</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let isCheckboxValid = false;
+
+      const form = document.getElementById("plans");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (validateSecondForm()) {
+          window.location.href = "summary.html";
+        }
+      });
+
+      function validateSecondForm() {
+        const checkboxes = document.querySelectorAll(".checkbox");
+        const labels = document.querySelector("#label");
+        let isCheckboxValid = false;
+
+        checkboxes.forEach((checkbox, index) => {
+          if (checkbox.checked) {
+            isCheckboxValid = true;
+            return;
+          }
+        });
+
+        return isCheckboxValid;
+      }
+    </script>
+  </body>
+</html>

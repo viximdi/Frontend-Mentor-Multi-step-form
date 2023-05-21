@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+
+  <body>
+    <main>
+      <section id="steps-container">
+        <div>
+          <div>
+            <a class="active" href="index.html">1</a>
+            <div>
+              <p>step 1</p>
+              <p class="bold">YOPUR INFO</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="plan.html">2</a>
+            <div>
+              <p>step 2</p>
+              <p class="bold">SELECT PLANS</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="add-ons.html">3</a>
+            <div>
+              <p>step 3</p>
+              <p class="bold">ADD-ONS</p>
+            </div>
+          </div>
+
+          <div>
+            <a href="summary.html">4</a>
+            <div>
+              <p>step 4</p>
+              <p class="bold">SUMMARY</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="form-container">
+        <div>
+          <div class="header">
+            <h1>Personal info</h1>
+            <p
+              >Please provide your name, email <br />
+              address, and phone number</p
+            >
+          </div>
+
+          <form onsubmit="validateInput()" id="my_form">
+            <div>
+              <span class="validate"></span>
+              <label for="name">Name</label>
+              <input
+                type="text"
+                placeholder="e.g. Stephen King"
+                id="name"
+                required
+                class="inputs" />
+            </div>
+
+            <div>
+              <span class="validate"></span>
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                placeholder="e.g stephenking@lorem.com"
+                id="email"
+                required
+                class="inputs" />
+            </div>
+
+            <div>
+              <span class="validate"></span>
+              <label for="tel">Phone Number</label>
+              <input
+                type="tel"
+                placeholder="e.g. +1234672652"
+                id="tel"
+                required
+                class="inputs" />
+            </div>
+            <a href="plan.html" class="button">
+              <button onclick="validateInput()">Next Step</button>
+            </a>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let isValid = false;
+
+      const form = document.querySelector("#my_form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (isValid === true) {
+          window.location.href = "plan.html";
+        }
+      });
+
+      function validateInput() {
+        const inputElements = document.querySelectorAll("#name, #email, #tel");
+        const labelElements = document.querySelectorAll(".inputs");
+        const spanElements = document.querySelectorAll(".validate");
+
+        inputElements.forEach((element, index) => {
+          if (element.value === "") {
+            element.style.border = "1px solid red";
+            spanElements[index].innerHTML = "This field is required";
+            spanElements[index].style.color = "red";
+            isValid = false;
+          } else {
+            element.style.border = "1px solid hsl(229, 24%, 87%)";
+            spanElements[index].innerHTML = "";
+            labelElements[index].style.color = "hsl(213, 96%, 18%)";
+            isValid = true;
+          }
+        });
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
