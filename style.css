@@ -337,7 +337,7 @@ svg {
   cursor: pointer;
   transition: 0.5 ease-in-out;
   position: relative;
-  left: 40%;
+  left: 50%;
 }
 
 #form-container #plan-toggle-container #toggler::before {
