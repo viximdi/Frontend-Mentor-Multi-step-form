@@ -77,7 +77,11 @@
 
               <div>
                 <h3>Arcade</h3>
-                <span>$<span id="arcade-pricing">9</span>/mo</span>
+                <span>
+                  $<span id="arcade-pricing">9</span>/<span class="duration"
+                    >mo</span
+                  >
+                </span>
               </div>
             </label>
 
@@ -100,7 +104,11 @@
 
               <div>
                 <h3 id="advanced-plan">Advanced</h3>
-                <span>$<span id="advanced-pricing">12</span>/mo</span>
+                <span>
+                  $<span id="advanced-pricing">12</span>/<span class="duration"
+                    >mo
+                  </span>
+                </span>
               </div>
             </label>
 
@@ -122,7 +130,11 @@
 
               <div>
                 <h3 id="pro-plan">pro</h3>
-                <span>$<span id="pro-pricing">15</span>/mo</span>
+                <span>
+                  $<span id="pro-pricing">15</span>/<span class="duration"
+                    >mo</span
+                  >
+                </span>
               </div>
             </label>
             <div id="navigation" class="plan-navigation">
@@ -147,6 +159,7 @@
       let arcadePlan = document.querySelector("#arcade-pricing");
       let advancedPlan = document.querySelector("#advanced-pricing");
       let proPlan = document.querySelector("#pro-pricing");
+      let planDuration = document.querySelectorAll(".duration");
       let isValid = false;
       const checkboxes = document.querySelectorAll(".radio");
 
@@ -155,10 +168,19 @@
           arcadePlan.textContent = 90;
           advancedPlan.textContent = 120;
           proPlan.textContent = 150;
+
+          planDuration.forEach(function (element) {
+            element.textContent = "yr";
+          });
         } else {
           arcadePlan.textContent = 9;
           advancedPlan.textContent = 12;
           proPlan.textContent = 15;
+
+          planDuration.forEach(function (element) {
+            element.textContent = "mo";
+          });
+
           return;
         }
       });
