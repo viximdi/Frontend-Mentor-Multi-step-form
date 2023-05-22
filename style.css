@@ -25,7 +25,7 @@ main {
 
 #steps-container {
   height: 30%;
-  background: url(./assets/images/bg-sidebar-mobile.svg);
+  background: url(bg-sidebar-mobile.svg);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 8%;
@@ -170,7 +170,7 @@ a {
   }
 
   #steps-container {
-    background: url(./assets/images/bg-sidebar-desktop.svg);
+    background: url(bg-sidebar-desktop.svg);
     background-size: cover;
     height: 100%;
     width: 40%;
