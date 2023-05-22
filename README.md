@@ -1,4 +1,4 @@
-# Frontend-Mentor-Multi-step-form
+# Multi-step-form
 
 Multi-step form
 This is a multi-step form project built using HTML, CSS, and JavaScript. The form consists of multiple steps where users can provide their personal information, select plans, and add-ons. The project aims to create an interactive and user-friendly form for collecting user data.
